@@ -5,7 +5,7 @@ Skip running expensive commands or functions when input or output files or direc
 ## CLI
 
 ```sh
-npx dejarun
+npx dejarun \
   --input src \
   --output lang.json \
   -- 'formatjs extract "src/**/*.{ts,tsx,vue}" --out-file lang.json'
@@ -29,7 +29,7 @@ await dejarun(
     inputs: ["src"], // Files or directories
     outputs: ["lang.json"], // Files or directories
     // dependencies: [], // Other dependencies
-  }
+  },
 );
 ```
 
