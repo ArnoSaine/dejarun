@@ -1,5 +1,0 @@
----
-"dejarun": minor
----
-
-First release
