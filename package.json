@@ -1,6 +1,6 @@
 {
   "name": "dejarun",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A file system operation cache for Node.js, using a hash of the file or folder contents as the cache key.",
   "keywords": [
     "fs",
