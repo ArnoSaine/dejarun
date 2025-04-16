@@ -24,7 +24,8 @@
   "bin": "./lib/bin/main.js",
   "files": [
     "lib",
-    "src"
+    "src",
+    "!src/**/*.test.*"
   ],
   "scripts": {
     "build": "tsc --project tsconfig.lib.json",
