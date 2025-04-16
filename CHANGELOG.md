@@ -1,5 +1,11 @@
 # dejarun
 
+## 0.1.2
+
+### Patch Changes
+
+- 871e96f: Ignore tests from package
+
 ## 0.1.1
 
 ### Patch Changes
