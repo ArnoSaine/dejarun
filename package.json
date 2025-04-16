@@ -1,0 +1,50 @@
+{
+  "name": "dejarun",
+  "version": "0.0.0",
+  "description": "A file system operation cache for Node.js, using a hash of the file or folder contents as the cache key.",
+  "keywords": [
+    "fs",
+    "cache",
+    "hash",
+    "file",
+    "operation"
+  ],
+  "homepage": "https://github.com/ArnoSaine/dejarun",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArnoSaine/dejarun.git"
+  },
+  "license": "ISC",
+  "author": {
+    "name": "Arno Saine",
+    "email": "arno@mowhi.com"
+  },
+  "type": "module",
+  "exports": "./lib/main.js",
+  "bin": "./lib/bin/main.js",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.lib.json",
+    "dev": "npm run build -- --watch",
+    "release": "npm run build && npm test && changeset version && changeset publish",
+    "test": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test './src/**/*.test.ts'",
+    "typecheck": "npm run build -- --noEmit"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "execa": "^9.5.2",
+    "folder-hash": "^4.1.1"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.1",
+    "@types/folder-hash": "^4.0.4",
+    "@types/node": "^22.14.1",
+    "typescript": "^5.8.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
