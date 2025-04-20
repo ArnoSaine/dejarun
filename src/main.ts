@@ -41,7 +41,7 @@ export default async function dejarun(
   options?: {
     inputs?: string[];
     outputs?: string[];
-    dependencies?: string[];
+    dependencies?: any[];
     clean?: boolean;
     debug?: boolean;
   },
