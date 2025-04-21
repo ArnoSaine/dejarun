@@ -34,6 +34,7 @@ const hashFileOrDirList = (paths: string[] = []) =>
  *   - dependencies: An array of arbitrary values to hash for cache validation.
  *   - clean: A boolean indicating whether to clean the cache (default: false).
  *   - debug: A boolean indicating whether to log debug information (default: false).
+ *   - logo: A string or false to customize the logo in the logs (default: '[déjàrun]').
  */
 export default async function dejarun(
   name: string,
@@ -44,6 +45,7 @@ export default async function dejarun(
     dependencies?: any[];
     clean?: boolean;
     debug?: boolean;
+    logo?: string | false;
   },
 ) {
   const cacheName = `${process.env.npm_package_name}/${name}`;
@@ -70,24 +72,25 @@ export default async function dejarun(
   cache name: ${chalk.bold(cacheName)}
   cache file: ${chalk.bold(CACHE_FILE)}
   inputs:${chalk.bold(each`
-    ${options?.inputs}`)}
+    ${options.inputs}`)}
   outputs:${chalk.bold(each`
-    ${options?.outputs}`)}
+    ${options.outputs}`)}
   dependencies:${chalk.bold(each`
-    ${options?.dependencies}`)}
+    ${options.dependencies}`)}
   total hash: ${totalHash}`,
+      options.logo,
     );
   }
 
   if (options?.clean) {
-    logger("clean", name);
+    logger("clean", name, options.logo);
     delete cache[cacheName];
   } else {
     if (totalHash === cache[cacheName]) {
-      logger("hit", name);
+      logger("hit", name, options?.logo);
       return;
     }
-    logger("miss", name);
+    logger("miss", name, options?.logo);
   }
 
   await callback();

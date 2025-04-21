@@ -12,6 +12,8 @@ const {
     dependency: dependencies,
     clean,
     debug,
+    logo,
+    "no-logo": noLogo,
   },
   positionals,
 } = parseArgs({
@@ -21,14 +23,18 @@ const {
     dependency: { type: "string", multiple: true },
     clean: { type: "boolean" },
     debug: { type: "boolean" },
+    logo: { type: "string" },
+    "no-logo": { type: "boolean" },
   },
   allowPositionals: true,
 });
 
 const command = positionals.join(" ");
 
+const logoOption = noLogo ? false : logo;
+
 if (!command) {
-  logger("error", "No command provided to execute.");
+  logger("error", "No command provided to execute.", logoOption);
   process.exit(1);
 }
 
@@ -41,5 +47,6 @@ await dejarun(
     dependencies,
     clean,
     debug,
+    logo: logoOption,
   },
 );

@@ -41,12 +41,13 @@ await dejarun(
 
 ## Options
 
-| CLI flag                    | API Option     | Type       | Description                                       |
-| --------------------------- | -------------- | ---------- | ------------------------------------------------- |
-| `--input` _(multiple)_      | `inputs`       | `string[]` | Input files or directories to hash                |
-| `--output` _(multiple)_     | `outputs`      | `string[]` | Output files or directories to hash               |
-| `--dependency` _(multiple)_ | `dependencies` | `any[]`    | Extra data to hash (e.g. CLI args, config values) |
-| `--clean`                   | `clean`        | `boolean`  | Force rerun even if nothing changed               |
-| `--debug`                   | `debug`        | `boolean`  | Print internal debug info                         |
+| CLI flag                    | API Option     | Type              | Description                                                                                                                                  |
+| --------------------------- | -------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--input` _(multiple)_      | `inputs`       | `string[]`        | Input files or directories to hash                                                                                                           |
+| `--output` _(multiple)_     | `outputs`      | `string[]`        | Output files or directories to hash                                                                                                          |
+| `--dependency` _(multiple)_ | `dependencies` | `any[]`           | Extra data to hash (e.g. CLI args, config values)                                                                                            |
+| `--clean`                   | `clean`        | `boolean`         | Force rerun even if nothing changed                                                                                                          |
+| `--debug`                   | `debug`        | `boolean`         | Print internal debug info                                                                                                                    |
+| `--logo`, `--no-logo`       | `logo`         | `string \| false` | Customize the logo in the logs. You may use [chalk](https://www.npmjs.com/package/chalk), e.g. `'${chalk.green("→")}'`. Set `false` to hide. |
 
 All options are optional.
