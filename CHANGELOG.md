@@ -1,5 +1,13 @@
 # dejarun
 
+## 0.1.2
+
+### Patch Changes
+
+- eea5d4c: Fix dependencies type, `string` -> `any`
+- d25ab0b: Customize / disable logo in the logs
+- 871e96f: Ignore tests from package
+
 ## 0.1.1
 
 ### Patch Changes
